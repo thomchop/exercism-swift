@@ -1,13 +1,21 @@
+# This workflow runs SwiftLint on all Swift files
+
 name: SwiftLint
 
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/swiftlint.yml'
+      - '.swiftlint.yml'
+      - '**/*.swift'
 
 jobs:
   lint:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout PR
+        uses: actions/checkout@v2
 
       - name: Run SwiftLint
         uses: norio-nomura/action-swiftlint@3.1.0

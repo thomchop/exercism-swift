@@ -1,4 +1,4 @@
-# This workflow will do a fetch the latest configlet binary and lint this repository.
+# This workflow fetches the latest configlet binary and lints this repository
 
 name: Configlet
 

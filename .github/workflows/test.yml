@@ -1,14 +1,20 @@
-name: Test
+# This workflow runs each exercise's test suite
 
-on: pull_request
+name: Exercise Tests
+
+on:
+  pull_request:
+    paths:
+      - 'exercises/*/Sources/*/*Example.swift'
+      - 'exercises/*/Tests/*/*Tests.swift'
+      - 'xswift-test-spm'
 
 jobs:
-  build:
-
+  test:
     runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: xswift-test-spm
+    - name: Run exercise tests
       run: ./xswift-test-spm
