@@ -30,3 +30,5 @@ DerivedData
 LinuxMain.swift
 Package.resolved
 xswift.xcodeproj/
+
+lintreport.json
