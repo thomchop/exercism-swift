@@ -1,0 +1,17 @@
+name: Swift
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Fetch configlet
+      uses: exercism/github-actions/configlet-ci@master
+
+    - name: Configlet Linter
+      run: configlet lint .
