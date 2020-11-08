@@ -5,6 +5,7 @@ name: Swift package manager
 on:
   pull_request:
     paths:
+      - '.github/workflows/package.yml'
       - '**/*.swift'
       - 'config.json'
 

@@ -5,6 +5,7 @@ name: Exercise Tests
 on:
   pull_request:
     paths:
+      - '.github/workflows/test.yml'
       - 'exercises/*/Sources/*/*Example.swift'
       - 'exercises/*/Tests/*/*Tests.swift'
       - 'xswift-test-spm'
