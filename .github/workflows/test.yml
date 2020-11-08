@@ -12,7 +12,7 @@ on:
 
 jobs:
   test_mac:
-    runs-on: macos-latest
+    runs-on: macos-10.15
 
     steps:
     - name: Checkout PR
@@ -27,7 +27,7 @@ jobs:
       run: ./xswift-test-spm
 
   test_linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
     - name: Checkout PR
