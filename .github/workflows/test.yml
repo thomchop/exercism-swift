@@ -18,6 +18,11 @@ jobs:
     - name: Checkout PR
       uses: actions/checkout@v2
 
+    - name: Set up Swift environment using swiftenv
+      uses: YOCKOW/Action-setup-swift@v1
+      with:
+        swift-version: '5.3'
+
     - name: Run exercise tests
       run: ./xswift-test-spm
 
@@ -27,6 +32,11 @@ jobs:
     steps:
     - name: Checkout PR
       uses: actions/checkout@v2
+
+    - name: Set up Swift environment using swiftenv
+      uses: YOCKOW/Action-setup-swift@v1
+      with:
+        swift-version: '5.3'
 
     - name: Run exercise tests
       run: ./xswift-test-spm
