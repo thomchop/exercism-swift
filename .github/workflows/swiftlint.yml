@@ -10,8 +10,18 @@ on:
       - '**/*.swift'
 
 jobs:
-  lint:
+  lint_mac:
     runs-on: macos-latest
+
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v2
+
+      - name: Run SwiftLint
+        run: swiftlint --reporter github-actions-logging
+
+  lint_linux:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout PR
