@@ -1,10 +1,11 @@
-name: Lint
+# This workflow will do a fetch the latest configlet binary and lint this repository.
+
+name: Configlet
 
 on: pull_request
 
 jobs:
-  build:
-
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,6 +16,3 @@ jobs:
 
     - name: Configlet Linter
       run: configlet lint .
-
-    - name: SwiftLint
-      uses: norio-nomura/action-swiftlint@3.1.0
