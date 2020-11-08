@@ -1,0 +1,30 @@
+# This workflow runs the Swift package manager
+
+name: Swift package manager
+
+on:
+  pull_request:
+    paths:
+      - '**/*.swift'
+      - 'config.json'
+
+jobs:
+  package_mac:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout PR
+      uses: actions/checkout@v2
+
+    - name: Generate Xcode project
+      run: swift package generate-xcodeproj
+
+  package_linux:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout PR
+      uses: actions/checkout@v2
+
+    - name: Generate Xcode project
+      run: swift package generate-xcodeproj
