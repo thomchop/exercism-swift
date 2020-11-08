@@ -10,11 +10,22 @@ on:
       - 'xswift-test-spm'
 
 jobs:
-  test:
+  test_mac:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout PR
+      uses: actions/checkout@v2
+
+    - name: Run exercise tests
+      run: ./xswift-test-spm
+
+  test_linux:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout PR
+      uses: actions/checkout@v2
 
     - name: Run exercise tests
       run: ./xswift-test-spm
