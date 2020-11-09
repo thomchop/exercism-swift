@@ -19,5 +19,3 @@ disabled_rules: # rule identifiers to exclude from running
   - line_length
   - trailing_comma
   - force_try
-
-reporter: "json"
