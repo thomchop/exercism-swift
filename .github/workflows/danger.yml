@@ -1,6 +1,4 @@
-# This workflow runs SwiftLint on all Swift files
-
-name: SwiftLint
+name: Danger + SwiftLint
 
 on:
   pull_request:
@@ -8,6 +6,9 @@ on:
       - '.github/workflows/danger.yml'
       - '.swiftlint.yml'
       - '**/*.swift'
+      - 'Dangerfile'
+      - 'Gemfile'
+      - 'Gemfile.lock'
 
 jobs:
   lint_danger:
@@ -16,6 +17,9 @@ jobs:
     steps:
     - name: Checkout PR
       uses: actions/checkout@v2
+
+    - name: Install bundler and danger gems
+      run: sudo gem install bundler && bundle install
 
     - name: Run SwiftLint and output to lintreport.json
       run: swiftlint lint --quiet --reporter json | tee lintreport.json
